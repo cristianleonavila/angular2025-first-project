@@ -1,4 +1,4 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, effect, input, output, signal } from '@angular/core';
 import { Character } from '../../../interfaces/character';
 
 @Component({
@@ -27,6 +27,7 @@ export class CharacterAddComponent {
     this.newCharacter.emit(newCharacter);
     this.reset();
   }
+
 
   reset() {
     this.name.set('');

@@ -3,12 +3,12 @@
 
 <section class="row">
   <div class="col-12 col-sm-6">
-    <app-character-add (newCharacter)="addCharacter($event)" />
+    <app-character-add (newCharacter)="dbzService.addCharacter($event)" />
   </div>
 
   <div class="col-12 col-sm-6">
     <app-character-list
-    [characters]="characters()"
+    [characters]="dbzService.characters()"
     listName="Listado de Personajes DBZ"/>
   </div>
 </section>
