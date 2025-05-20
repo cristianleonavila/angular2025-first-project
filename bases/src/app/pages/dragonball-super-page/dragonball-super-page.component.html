@@ -3,27 +3,12 @@
 
 <section class="row">
   <div class="col-12 col-sm-6">
-    <h3>Agregar: {{ name() }}</h3>
-    <input type="text"
-           class="form-control"
-           placeholder="Nombre"
-           [value]="name()"
-           (change)="name.set(txtName.value)"
-           (input)="name.set(txtName.value)"
-           #txtName>
-    <h3>{{power()}}</h3>
-    <input type="number"
-           class="form-control mt-2"
-           placeholder="Poder"
-           [value]="power()"
-           (change)="power.set(+txtPoder.value)"
-           (input)="power.set(+txtPoder.value)"
-           #txtPoder
-           >
-    <button type="button" (click)="addCharacter()" class="btn btn-primary">Agregar</button>
+    <app-character-add (newCharacter)="addCharacter($event)" />
   </div>
 
   <div class="col-12 col-sm-6">
-    <app-character-list [characters]="characters()" listName="Listado de Personajes DBZ"/>
+    <app-character-list
+    [characters]="characters()"
+    listName="Listado de Personajes DBZ"/>
   </div>
 </section>
